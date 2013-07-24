@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SoftKeyboard</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="softkeyboard.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    function onDeviceReady() {
+        mostrarTeclado(); 
+    }
+    
+    window.onload = function (){
+    	document.getElementsByTagName('input')[0].focus();
+    }
+    
+    function mostrarTeclado(){
+    	plugins.SoftKeyBoard.show(function () {
+    	    // success
+    	},function () {
+    	   // fail
+    	});
+    }
+
+    </script>
+  </head>
+  <body>
+     <input type="text" id="caja">
+  </body>
+</html>
